@@ -1,122 +1,716 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>东京不动产中文尽调 · 买付前体检</title>
+<meta name="description" content="在日本买房签约前，让一个看得懂日文重要事項説明書的中国人，帮你把房子的风险一项项看清楚。独立第三方，不是中介，无利益冲突。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{--navy:#16314f;--blue:#2c6eb5;--accent:#2f9e6f;--warn:#d98324;--ink:#1a2430;--sub:#5b6b7a;--bg:#f4f7fa;--card:#fff;--line:#e3eaf1;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font:16px/1.7 -apple-system,"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;color:var(--ink);background:var(--bg);}
-.wrap{max-width:520px;margin:0 auto;}
-.hero{background:linear-gradient(160deg,#16314f,#0f2238);color:#fff;padding:46px 26px 40px;text-align:center;}
-.logo{font-size:13px;letter-spacing:2px;opacity:.8;margin-bottom:16px;}
-.hero h1{font-size:27px;line-height:1.4;font-weight:800;margin-bottom:14px;}
-.hero h1 em{color:#5fb8e8;font-style:normal;}
-.hero p{font-size:15px;opacity:.9;margin-bottom:24px;}
-.badge{display:inline-block;background:rgba(47,158,111,.18);border:1px solid var(--accent);color:#7fe0b4;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;margin-bottom:18px;}
-.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:17px;padding:14px 32px;border-radius:40px;text-decoration:none;box-shadow:0 6px 18px rgba(47,158,111,.3);}
-.cta.sm{font-size:15px;padding:12px 26px;}
-section{padding:34px 26px;}
-.t{font-size:21px;font-weight:800;text-align:center;margin-bottom:6px;}
-.t small{display:block;font-size:13px;font-weight:400;color:var(--sub);margin-top:6px;}
-.pain{background:var(--card);}
-.pain ul{list-style:none;margin-top:18px;}
-.pain li{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px;font-size:15px;display:flex;gap:10px;align-items:flex-start;}
-.pain b{color:var(--warn);}
-.feat{display:grid;gap:12px;margin-top:20px;}
-.fcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:12px;align-items:flex-start;}
-.fcard .n{flex:0 0 30px;height:30px;border-radius:8px;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;}
-.fcard h3{font-size:15px;margin-bottom:3px;}
-.fcard p{font-size:13px;color:var(--sub);}
-.why{background:linear-gradient(160deg,#eaf2f9,#dfeaf4);}
-.why .grid{display:grid;gap:12px;margin-top:18px;}
-.why .w{background:#fff;border-radius:12px;padding:14px 16px;font-size:14px;}
-.why .w b{color:var(--blue);}
-.price{background:var(--navy);color:#fff;text-align:center;}
-.price .free{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.4);border-radius:14px;padding:18px;margin:18px 0;}
-.price .free .h{font-size:18px;font-weight:800;color:#7fe0b4;}
-.price .big{font-size:38px;font-weight:800;color:#fff;margin:6px 0;}
-.price .big small{font-size:16px;opacity:.7;font-weight:400;}
-.price .sub{opacity:.78;font-size:13px;}
-.discl{background:var(--card);}
-.discl p{font-size:12.5px;color:var(--sub);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
-.foot{background:#0f2238;color:#fff;text-align:center;padding:38px 26px 44px;}
-.foot p{opacity:.9;font-size:14px;margin:12px 0 22px;}
-.qrs{display:flex;gap:18px;justify-content:center;margin:18px 0 6px;}
-.qrbox{background:#fff;border-radius:14px;padding:10px 10px 8px;width:140px;}
-.qrbox img{width:120px;height:120px;display:block;border-radius:6px;object-fit:contain;}
-.qrbox .lbl{color:var(--navy);font-size:13px;font-weight:700;margin-top:6px;}
-.qrbox .id{color:#8a99a6;font-size:11px;}
-.tiny{font-size:11px;opacity:.55;margin-top:24px;line-height:1.6;}
+  :root{
+    --ink:#0B1622;
+    --navy:#0E2A47;
+    --navy-2:#13395f;
+    --paper:#FBFAF6;
+    --paper-2:#F3F0E9;
+    --card:#FFFFFF;
+    --line:#E7E2D6;
+    --line-strong:#D8D2C4;
+    --text:#1A2530;
+    --muted:#5C6A77;
+    --muted-2:#8A94A0;
+    --green:#1E7A55;
+    --green-2:#176545;
+    --green-soft:#E8F1EC;
+    --gold:#A8854E;
+    --gold-soft:#F2EADC;
+    --red:#C0453E;
+    --red-soft:#F7E7E5;
+    --amber:#CF9433;
+    --amber-soft:#F7EFDC;
+    --shadow-sm:0 1px 2px rgba(11,22,34,.04), 0 2px 8px rgba(11,22,34,.05);
+    --shadow-md:0 4px 14px rgba(11,22,34,.07), 0 14px 40px rgba(11,22,34,.06);
+    --shadow-lg:0 10px 30px rgba(11,22,34,.10), 0 30px 70px rgba(11,22,34,.10);
+    --r:14px;
+    --r-lg:20px;
+    --maxw:600px;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.8;
+    font-size:16px;
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Noto Serif SC",serif;font-weight:600;line-height:1.32;letter-spacing:.005em;margin:0;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  .serif{font-family:"Noto Serif SC",serif;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  .section{padding:60px 0;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:700;letter-spacing:.14em;
+    color:var(--green-2);text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--gold);display:inline-block;}
+  .lede{color:var(--muted);font-size:16.5px;}
+
+  /* icons */
+  .ic{width:22px;height:22px;display:inline-block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;}
+  .ic-lg{width:26px;height:26px;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(11,22,34,.86);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .brand{display:flex;align-items:center;gap:10px;color:#F4F6F8;}
+  .brand .mark{width:30px;height:30px;flex:none;color:var(--gold);}
+  .brand b{font-family:"Noto Serif SC",serif;font-weight:600;font-size:15.5px;letter-spacing:.02em;white-space:nowrap;}
+  .brand span{font-size:11.5px;color:#9FB0C0;display:block;letter-spacing:.18em;font-weight:500;margin-top:-2px;}
+  .topbar .nav-cta{
+    font-size:13px;font-weight:700;color:var(--ink);
+    background:#fff;padding:8px 15px;border-radius:999px;white-space:nowrap;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .topbar .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(120% 80% at 80% -10%, rgba(30,122,85,.18), transparent 55%),
+      radial-gradient(120% 90% at -10% 10%, rgba(19,57,95,.5), transparent 50%),
+      linear-gradient(180deg,#0B1622 0%, #0C1E33 60%, #0E2A47 100%);
+    color:#EAF0F5;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:46px 46px;
+    mask-image:radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
+    -webkit-mask-image:radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
+  }
+  .hero .wrap{position:relative;z-index:1;padding-top:54px;padding-bottom:64px;}
+  .trust-tag{
+    display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.04);
+    color:#CFE6DA;
+    padding:7px 14px;border-radius:999px;
+    font-size:12.5px;font-weight:600;letter-spacing:.04em;
+  }
+  .trust-tag .dot{width:7px;height:7px;border-radius:50%;background:#3EBB85;box-shadow:0 0 0 4px rgba(62,187,133,.18);}
+  .trust-tag i{font-style:normal;color:#9FB6C8;}
+  .hero h1{
+    font-size:clamp(31px,8.4vw,50px);
+    font-weight:700;color:#FCFDFE;
+    margin:24px 0 0;letter-spacing:.01em;
+  }
+  .hero h1 .hl{color:#5FCF9C;}
+  .hero .sub{
+    margin-top:20px;color:#B9C7D4;font-size:clamp(15.5px,4vw,18px);
+    line-height:1.85;max-width:33em;
+  }
+  .hero .sub b{color:#E7EEF3;font-weight:500;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:"Noto Sans SC",sans-serif;font-weight:700;font-size:16px;
+    padding:15px 24px;border-radius:12px;border:1px solid transparent;cursor:pointer;
+    transition:transform .18s ease, box-shadow .2s ease, background .2s ease;
+    letter-spacing:.02em;
+  }
+  .btn-primary{
+    background:linear-gradient(180deg,#2A9568,#1E7A55);color:#fff;
+    box-shadow:0 6px 20px rgba(30,122,85,.36), inset 0 1px 0 rgba(255,255,255,.18);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(30,122,85,.46), inset 0 1px 0 rgba(255,255,255,.2);}
+  .btn-primary:active{transform:translateY(0);}
+  .btn-ghost{
+    background:rgba(255,255,255,.05);color:#E7EEF3;border-color:rgba(255,255,255,.22);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;
+    color:#90A4B5;font-size:13px;
+  }
+  .hero-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .hero-meta .ic{width:17px;height:17px;stroke-width:1.7;color:#5FCF9C;}
+
+  /* ---------- generic section heads ---------- */
+  .sec-head{margin-bottom:30px;}
+  .sec-head h2{font-size:clamp(24px,6vw,34px);color:var(--ink);}
+  .sec-head p{margin-top:12px;color:var(--muted);max-width:34em;}
+
+  /* ---------- pain ---------- */
+  .pain{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .pain-list{display:grid;gap:14px;}
+  .pain-item{
+    display:flex;gap:15px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r);padding:18px 18px;box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .pain-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--line-strong);}
+  .pain-item .pi-ic{
+    flex:none;width:42px;height:42px;border-radius:11px;
+    display:grid;place-items:center;color:var(--red);
+    background:var(--red-soft);border:1px solid rgba(192,69,62,.18);
+  }
+  .pain-item .pi-ic .ic{width:21px;height:21px;}
+  .pain-item h3{font-size:16.5px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.5;}
+  .pain-item p{font-size:14.5px;color:var(--muted);line-height:1.7;}
+
+  /* ---------- report ---------- */
+  .report-intro h2{font-size:clamp(24px,6vw,34px);color:var(--ink);}
+  .report-intro p{margin-top:12px;color:var(--muted);}
+
+  .report{
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--line-strong);
+    border-radius:var(--r-lg);
+    box-shadow:var(--shadow-lg);
+    overflow:hidden;
+  }
+  .rep-head{
+    background:linear-gradient(180deg,#0E2A47,#0B1F36);
+    color:#EAF0F5;padding:20px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .rep-head .t b{font-family:"Noto Serif SC",serif;font-weight:600;font-size:17px;display:block;}
+  .rep-head .t span{font-size:12px;color:#9FB6C8;letter-spacing:.04em;}
+  .rep-head .sample{
+    flex:none;font-size:11px;font-weight:700;letter-spacing:.18em;
+    color:var(--gold);border:1px solid rgba(168,133,78,.55);
+    padding:5px 10px;border-radius:7px;background:rgba(168,133,78,.1);
+  }
+  /* 总评 strip */
+  .rep-verdict{
+    padding:18px 22px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#FCFBF8,#F7F4EE);
+  }
+  .rep-verdict .vh{display:flex;align-items:center;gap:12px;margin-bottom:13px;}
+  .lights{display:flex;gap:6px;flex:none;}
+  .lights i{width:13px;height:13px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.06);}
+  .lights .g{background:var(--green);}
+  .lights .a{background:var(--amber);}
+  .lights .r{background:var(--red);}
+  .rep-verdict .vh b{font-family:"Noto Serif SC",serif;font-size:15.5px;color:var(--ink);}
+  .rep-verdict .vh em{font-style:normal;font-size:12.5px;color:var(--red);font-weight:700;margin-left:auto;}
+  .top3{display:grid;gap:8px;}
+  .top3 li{
+    display:flex;align-items:flex-start;gap:10px;list-style:none;
+    font-size:14px;color:var(--text);line-height:1.6;
+  }
+  .top3 .chip-dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:7px;}
+  .top3 .r{background:var(--red);}.top3 .a{background:var(--amber);}
+  ul.top3{margin:0;padding:0;}
+
+  /* dimension rows */
+  .rep-dims{padding:6px 0;}
+  .dim{
+    display:flex;align-items:center;gap:13px;
+    padding:13px 22px;border-top:1px solid var(--line);
+  }
+  .dim:first-child{border-top:none;}
+  .dim .num{font-size:11px;color:var(--muted-2);font-weight:700;width:18px;flex:none;font-variant-numeric:tabular-nums;}
+  .dim .d-main{flex:1;min-width:0;}
+  .dim .d-main b{font-size:14.5px;font-weight:600;color:var(--ink);display:block;line-height:1.4;}
+  .dim .d-main span{font-size:12.5px;color:var(--muted);display:block;line-height:1.5;margin-top:1px;}
+  .status{
+    flex:none;font-size:11.5px;font-weight:700;letter-spacing:.02em;
+    padding:4px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;
+  }
+  .status .sd{width:7px;height:7px;border-radius:50%;}
+  .status.g{color:var(--green-2);background:var(--green-soft);} .status.g .sd{background:var(--green);}
+  .status.a{color:#9a6e16;background:var(--amber-soft);} .status.a .sd{background:var(--amber);}
+  .status.r{color:#9c302a;background:var(--red-soft);} .status.r .sd{background:var(--red);}
+  .rep-foot{
+    padding:14px 22px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;
+    background:#FBFAF7;
+  }
+  .rep-foot .ic{width:16px;height:16px;color:var(--green);}
+
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;justify-content:center;}
+  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);}
+  .legend i{width:10px;height:10px;border-radius:50%;}
+
+  /* ---------- trust ---------- */
+  .trust{background:var(--ink);color:#E7EEF3;}
+  .trust .eyebrow{color:#6FD3A2;}
+  .trust .eyebrow::before{background:var(--gold);}
+  .trust .sec-head h2{color:#FCFDFE;}
+  .trust-grid{display:grid;gap:14px;}
+  .tcard{
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--r);padding:22px 20px;
+    transition:transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .tcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.06);border-color:rgba(111,211,162,.4);}
+  .tcard .tc-ic{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    color:#6FD3A2;background:rgba(30,122,85,.18);border:1px solid rgba(111,211,162,.3);margin-bottom:15px;
+  }
+  .tcard h3{color:#FCFDFE;font-size:18px;margin-bottom:8px;}
+  .tcard p{color:#9FB2C2;font-size:14.5px;line-height:1.75;}
+
+  /* ---------- steps ---------- */
+  .steps-grid{display:grid;gap:16px;}
+  .step{
+    position:relative;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);
+  }
+  .step .badge{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+    letter-spacing:.1em;padding:5px 12px;border-radius:999px;margin-bottom:14px;
+  }
+  .step.free{border-color:rgba(30,122,85,.35);box-shadow:0 4px 18px rgba(30,122,85,.1);}
+  .step.free .badge{color:var(--green-2);background:var(--green-soft);}
+  .step.paid .badge{color:var(--gold);background:var(--gold-soft);}
+  .step h3{font-size:20px;color:var(--ink);margin-bottom:8px;}
+  .step p{color:var(--muted);font-size:14.5px;line-height:1.75;}
+  .step .flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:16px;}
+  .flow .pill{
+    font-size:13px;font-weight:600;color:var(--text);background:var(--paper-2);
+    border:1px solid var(--line);border-radius:9px;padding:7px 12px;
+  }
+  .flow .arr{color:var(--muted-2);}
+  .price{display:flex;align-items:baseline;gap:10px;margin-top:16px;}
+  .price .amt{font-family:"Noto Serif SC",serif;font-size:34px;font-weight:700;color:var(--ink);}
+  .price .unit{font-size:14px;color:var(--muted);}
+  .price .tag{
+    margin-left:auto;font-size:12px;font-weight:700;color:var(--green-2);
+    background:var(--green-soft);padding:5px 11px;border-radius:999px;
+  }
+  .step .btn{margin-top:20px;width:100%;}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:#16273a;transform:translateY(-2px);box-shadow:var(--shadow-md);}
+
+  /* ---------- compliance ---------- */
+  .compliance{background:var(--paper-2);border-top:1px solid var(--line);}
+  .disclaimer{
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:12px;padding:20px 20px;
+  }
+  .disclaimer .dh{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ink);font-size:14px;margin-bottom:10px;}
+  .disclaimer .dh .ic{width:18px;height:18px;color:var(--gold);}
+  .disclaimer p{font-size:13px;color:var(--muted);line-height:1.85;}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink);color:#E7EEF3;}
+  .contact .eyebrow{color:#6FD3A2;}
+  .contact .sec-head h2{color:#FCFDFE;}
+  .contact .sec-head p{color:#9FB2C2;}
+  .qr-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
+  .qr{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--r);padding:18px 16px;text-align:center;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .qr:hover{transform:translateY(-3px);border-color:rgba(111,211,162,.4);}
+  .qr .qbox{
+    width:100%;aspect-ratio:1;background:#fff;border-radius:10px;overflow:hidden;
+    display:grid;place-items:center;margin-bottom:13px;
+  }
+  .qr .qbox img{width:100%;height:100%;object-fit:contain;display:block;}
+  .qr .ch{font-size:13px;font-weight:700;color:#FCFDFE;display:flex;align-items:center;justify-content:center;gap:7px;}
+  .qr .ch .ic{width:16px;height:16px;}
+  .qr .hd{font-size:13px;color:#8FA6B7;margin-top:3px;font-family:"Noto Sans SC";letter-spacing:.02em;}
+  .qr.wx .ch .ic{color:#3EBB85;}
+  .qr.line .ch .ic{color:#4CC764;}
+  .contact-note{
+    text-align:center;margin-top:22px;color:#9FB2C2;font-size:14px;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .contact-note .ic{width:18px;height:18px;color:#6FD3A2;}
+
+  /* ---------- footer ---------- */
+  footer{background:#070E16;color:#7C8B99;padding:30px 0 36px;}
+  footer .wrap{text-align:center;}
+  footer .fbrand{display:inline-flex;align-items:center;gap:9px;color:#C7D2DC;margin-bottom:12px;}
+  footer .fbrand .mark{width:24px;height:24px;color:var(--gold);}
+  footer .fbrand b{font-family:"Noto Serif SC",serif;font-size:14px;font-weight:600;}
+  footer .fline{font-size:12.5px;line-height:1.9;color:#7C8B99;}
+  footer .fmini{font-size:11.5px;color:#4F5E6C;margin-top:12px;letter-spacing:.02em;}
+
+  /* ---------- reveal anim ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.07s;}
+  .reveal.d2{transition-delay:.14s;}
+  .reveal.d3{transition-delay:.21s;}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .btn,.tcard,.pain-item,.qr{transition:none;}
+  }
+
+  /* ---------- responsive up ---------- */
+  @media (min-width:680px){
+    :root{--maxw:680px;}
+    .section{padding:78px 0;}
+    .trust-grid{grid-template-columns:repeat(3,1fr);}
+    .steps-grid{grid-template-columns:1fr 1fr;align-items:start;}
+    .pain-list{grid-template-columns:1fr 1fr;}
+    .hero .wrap{padding-top:70px;padding-bottom:86px;}
+  }
+  @media (min-width:920px){
+    :root{--maxw:740px;}
+  }
 </style>
 </head>
-<body><div class="wrap">
+<body>
 
-<div class="hero">
-  <div class="logo">东 京 不 动 产 · 中 文 尽 调</div>
-  <div class="badge">✓ 独立第三方 · 不是中介 · 无利益冲突</div>
-  <h1>买日本房子前<br>先做一次<em>买付前体检</em></h1>
-  <p>签约前，让一个看得懂日文「重要事項説明書」的中国人，<br>帮你把房子的雷一个个看清楚——买不买，你自己定。</p>
-  <a class="cta" href="#contact">免费帮我拆一份重説</a>
+<!-- ===== inline icon symbols ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"/><path d="M9.2 12l2 2 3.6-4"/></symbol>
+  <symbol id="ic-mark" viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5"/><path d="M6 10v9h12v-9"/><circle cx="14.5" cy="14.5" r="2.4"/><path d="M16.2 16.2l1.8 1.8"/></symbol>
+  <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15h6M9.5 9h2"/></symbol>
+  <symbol id="ic-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.2A9 9 0 0 1 12 6c5 0 9 6 9 6a16 16 0 0 1-2.3 2.9M6.1 7.9C3.8 9.4 3 12 3 12s4 6 9 6a8.7 8.7 0 0 0 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v5M12 17.5v.01"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.7 5.4 3.7 8.5s-1.3 6.2-3.7 8.5c-2.4-2.3-3.7-5.4-3.7-8.5S9.6 5.8 12 3.5z"/></symbol>
+  <symbol id="ic-balance" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 7h14M5 7l-2.2 5a3 3 0 0 0 4.4 0L5 7zM19 7l-2.2 5a3 3 0 0 0 4.4 0L19 7z"/><path d="M9 4.5l6-1"/></symbol>
+  <symbol id="ic-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10.5 10.5h3v3h-3z"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+  <symbol id="ic-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5.5" ry="2.6"/><path d="M3.5 7v5c0 1.4 2.5 2.6 5.5 2.6s5.5-1.2 5.5-2.6V7"/><path d="M9 14.6V17c0 1.4 2.5 2.6 5.5 2.6S20 18.4 20 17v-5"/><path d="M14.5 9.4c2.8.1 5.5 1.2 5.5 2.6"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-wechat" viewBox="0 0 24 24"><path d="M9 4.5c-3.6 0-6.5 2.4-6.5 5.4 0 1.7 1 3.2 2.5 4.2L4.5 16l2.3-1.2c.7.2 1.4.3 2.2.3"/><path d="M21.5 14.6c0-2.6-2.5-4.7-5.6-4.7s-5.6 2.1-5.6 4.7 2.5 4.7 5.6 4.7c.7 0 1.3-.1 1.9-.3l2 1-.5-1.6c1.4-.9 2.2-2.2 2.2-3.5z"/></symbol>
+  <symbol id="ic-line" viewBox="0 0 24 24"><path d="M21 10.3C21 6.3 17 3 12 3S3 6.3 3 10.3c0 3.6 3.2 6.6 7.5 7.2.3 0 .7.2.8.4.1.3.1.7 0 1l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.6z"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
+
+<!-- ===== top bar ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="东京不动产 中文尽调">
+      <svg class="mark"><use href="#ic-mark"/></svg>
+      <span style="line-height:1.1">
+        <b>东京不动产 · 中文尽调</b>
+        <span>DUE&nbsp;DILIGENCE</span>
+      </span>
+    </a>
+    <a class="nav-cta" href="#contact">免费拆一份重説</a>
+  </div>
 </div>
 
-<section class="pain">
-  <div class="t">为什么你需要它？</div>
-  <ul>
-    <li>📑 <span>重説几十页<b>全日文</b>，房子的雷全写在里面，但你根本看不懂</span></li>
-    <li>🤝 <span>中介是<b>卖方那边的</b>，不会主动告诉你哪里有问题</span></li>
-    <li>⚠️ <span><b>再建築不可</b>、<b>借地権</b>、<b>事故物件</b>、修繕積立金滞納……一个没看出来，可能套牢上千万</span></li>
-    <li>🌏 <span>人在国内，远程买房，更怕被信息差坑</span></li>
-  </ul>
-</section>
+<!-- ===== hero ===== -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal in">
+      <span class="trust-tag">
+        <span class="dot"></span>独立第三方<i>·</i>不是中介<i>·</i>无利益冲突
+      </span>
+    </div>
+    <h1 class="reveal in d1">买日本房子前，<br>先做一次<span class="hl">买付前体检</span></h1>
+    <p class="sub reveal in d2">
+      在日本签约前，让一个<b>看得懂日文「重要事項説明書」</b>的中国人，
+      帮你把这套房子的风险一项项看清楚。<br>独立第三方，不替任何人卖房。
+    </p>
+    <div class="cta-row reveal in d2">
+      <a class="btn btn-primary" href="#contact">
+        免费帮我拆一份重説
+        <svg class="ic"><use href="#ic-arrow"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#report">先看报告样张</a>
+    </div>
+    <div class="hero-meta reveal in d3">
+      <span><svg class="ic"><use href="#ic-check"/></svg>东京本地</span>
+      <span><svg class="ic"><use href="#ic-check"/></svg>读得懂法律日文重説</span>
+      <span><svg class="ic"><use href="#ic-check"/></svg>AI辅助 · 人工逐项复核</span>
+    </div>
+  </div>
+</header>
 
-<section>
-  <div class="t">你会拿到一份《买付前体检报告》<small>中文 · 把风险一项项给你标清楚</small></div>
-  <div class="feat">
-    <div class="fcard"><div class="n">1</div><div><h3>権利关系</h3><p>所有権/借地権、有无抵当権·差押，土地到底是不是你的。</p></div></div>
-    <div class="fcard"><div class="n">2</div><div><h3>法令制限雷区</h3><p>再建築不可、建蔽率/容積率超标、市街化調整区域。</p></div></div>
-    <div class="fcard"><div class="n">3</div><div><h3>マンション健康度</h3><p>修繕積立金残高/滞納、管理費、这栋楼健不健康。</p></div></div>
-    <div class="fcard"><div class="n">4</div><div><h3>心理瑕疵 & 灾害</h3><p>事故物件、浸水/地盤（ハザードマップ）、嫌悪施設。</p></div></div>
-    <div class="fcard"><div class="n">5</div><div><h3>钱算清楚</h3><p>固都税、月管理費+修繕積立金、取得诸费用；投资房算利回り。</p></div></div>
-    <div class="fcard"><div class="n">6</div><div><h3>重説逐条中文解读</h3><p>把你看不懂的日文重説雷点，翻成大白话。</p></div></div>
-    <div class="fcard"><div class="n">🚦</div><div><h3>红绿灯总评</h3><p>这套房子最该担心的 3 件事，各项绿/黄/红一眼看清。</p></div></div>
+<!-- ===== pain ===== -->
+<section class="section pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">为什么要做体检</span>
+      <h2>几千万日元的决定，<br>不该建立在「看不懂」上</h2>
+      <p>远程、不熟悉日本制度、被中介话术搞得焦虑——信息差，才是买房最大的风险。</p>
+    </div>
+    <div class="pain-list">
+      <div class="pain-item reveal">
+        <div class="pi-ic"><svg class="ic"><use href="#ic-doc"/></svg></div>
+        <div>
+          <h3>重説几十页，全日文</h3>
+          <p>密密麻麻的法律日文，看不懂也不敢签字——但签了就生效。</p>
+        </div>
+      </div>
+      <div class="pain-item reveal d1">
+        <div class="pi-ic"><svg class="ic"><use href="#ic-eye-off"/></svg></div>
+        <div>
+          <h3>中介是卖方的</h3>
+          <p>他赚的是成交佣金，不会主动告诉你这套房子的雷埋在哪。</p>
+        </div>
+      </div>
+      <div class="pain-item reveal d2">
+        <div class="pi-ic"><svg class="ic"><use href="#ic-alert"/></svg></div>
+        <div>
+          <h3>一个没看出来，套牢上千万</h3>
+          <p>再建築不可 / 借地権 / 事故物件 / 修繕積立金滞納——任何一项都可能让房子砸手里。</p>
+        </div>
+      </div>
+      <div class="pain-item reveal d3">
+        <div class="pi-ic"><svg class="ic"><use href="#ic-globe"/></svg></div>
+        <div>
+          <h3>远程买房，信息差更大</h3>
+          <p>人不在现场，看的是中介给的版本——更需要一双独立的眼睛。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="why">
-  <div class="t">凭什么信我</div>
-  <div class="grid">
-    <div class="w">🇯🇵 <b>东京本地</b>，看得懂法律日文重説，也能用中文给你讲明白</div>
-    <div class="w">⚖️ <b>独立第三方</b>，不卖房、不拿中介佣金——只对你负责，没有利益冲突</div>
-    <div class="w">🤖 <b>AI 辅助梳理 + 人工逐项复核签发</b>，又快又稳，不是机器糊弄</div>
+<!-- ===== report ===== -->
+<section class="section" id="report">
+  <div class="wrap">
+    <div class="report-intro sec-head reveal">
+      <span class="eyebrow">你会拿到什么</span>
+      <h2>一份看得见的《买付前体检报告》</h2>
+      <p>8 个风险维度逐项体检，红绿灯总评一眼看懂——最该担心的 3 件事，写在最前面。</p>
+    </div>
+
+    <div class="report reveal d1" role="img" aria-label="买付前体检报告样张">
+      <div class="rep-head">
+        <div class="t">
+          <b>买付前体检报告</b>
+          <span>東京都 · 区分マンション · 築22年（示例物件）</span>
+        </div>
+        <span class="sample">SAMPLE 样张</span>
+      </div>
+
+      <div class="rep-verdict">
+        <div class="vh">
+          <span class="lights"><i class="g"></i><i class="a"></i><i class="r"></i></span>
+          <b>红绿灯总评</b>
+          <em>需重点关注</em>
+        </div>
+        <ul class="top3">
+          <li><span class="chip-dot r"></span><span><b style="font-weight:700">最该担心①</b>　接道仅 1.8m，<b style="font-weight:700">再建築不可</b>的可能性——重建受限，转售困难。</span></li>
+          <li><span class="chip-dot a"></span><span><b style="font-weight:700">最该担心②</b>　<b style="font-weight:700">修繕積立金</b>偏低且有滞納记录，未来大修恐需临时补缴。</span></li>
+          <li><span class="chip-dot a"></span><span><b style="font-weight:700">最该担心③</b>　位于<b style="font-weight:700">浸水想定 0.5–3m</b>区域，台风季有进水风险。</span></li>
+        </ul>
+      </div>
+
+      <div class="rep-dims">
+        <div class="dim">
+          <span class="num">01</span>
+          <div class="d-main"><b>権利関係</b><span>所有権・无抵押，非借地権</span></div>
+          <span class="status g"><span class="sd"></span>正常</span>
+        </div>
+        <div class="dim">
+          <span class="num">02</span>
+          <div class="d-main"><b>法令制限（再建築不可）</b><span>接道不足，重建受限</span></div>
+          <span class="status r"><span class="sd"></span>高风险</span>
+        </div>
+        <div class="dim">
+          <span class="num">03</span>
+          <div class="d-main"><b>マンション健康度</b><span>修繕積立金偏低 · 有滞納</span></div>
+          <span class="status a"><span class="sd"></span>留意</span>
+        </div>
+        <div class="dim">
+          <span class="num">04</span>
+          <div class="d-main"><b>心理瑕疵（事故物件）</b><span>告知事項なし</span></div>
+          <span class="status g"><span class="sd"></span>正常</span>
+        </div>
+        <div class="dim">
+          <span class="num">05</span>
+          <div class="d-main"><b>灾害风险（浸水・地震）</b><span>浸水想定 0.5–3m 区域</span></div>
+          <span class="status a"><span class="sd"></span>留意</span>
+        </div>
+        <div class="dim">
+          <span class="num">06</span>
+          <div class="d-main"><b>持有成本（固都税・管理費）</b><span>年约 ¥18 万，合理区间</span></div>
+          <span class="status g"><span class="sd"></span>正常</span>
+        </div>
+        <div class="dim">
+          <span class="num">07</span>
+          <div class="d-main"><b>投资回报（利回り）</b><span>表面 4.2% · 实际约 3.1%</span></div>
+          <span class="status a"><span class="sd"></span>留意</span>
+        </div>
+        <div class="dim">
+          <span class="num">08</span>
+          <div class="d-main"><b>重説逐条中文解读</b><span>全 32 条 · 已逐条标注</span></div>
+          <span class="status g"><span class="sd"></span>已完成</span>
+        </div>
+      </div>
+
+      <div class="rep-foot">
+        <svg class="ic"><use href="#ic-shield"/></svg>
+        AI 辅助梳理 · 人工逐项复核签发 · 仅为风险信息提供，非法律/投资意见
+      </div>
+    </div>
+
+    <div class="legend reveal d2">
+      <span><i style="background:var(--green)"></i>正常 · 可放心</span>
+      <span><i style="background:var(--amber)"></i>留意 · 需确认</span>
+      <span><i style="background:var(--red)"></i>高风险 · 重点</span>
+    </div>
   </div>
 </section>
 
-<section class="price">
-  <div class="t" style="color:#fff">怎么开始</div>
-  <div class="free">
-    <div class="h">第一步 · 免费</div>
-    <p style="opacity:.85;font-size:14px;margin-top:6px">把重説拍照发我，免费帮你拆一遍，<br>告诉你最该担心的 3 件事</p>
+<!-- ===== trust ===== -->
+<section class="section trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">为什么信我</span>
+      <h2>不替任何人卖房，<br>只对你的风险负责</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="tcard reveal">
+        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-pin"/></svg></div>
+        <h3>东京本地 · 懂法律日文</h3>
+        <p>就在东京，读得懂重要事項説明書里那些藏在法律日文中的关键条款。</p>
+      </div>
+      <div class="tcard reveal d1">
+        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-balance"/></svg></div>
+        <h3>独立第三方 · 无利益冲突</h3>
+        <p>不是中介、不赚买卖差价、不收卖方一分钱——立场只站在买家这边。</p>
+      </div>
+      <div class="tcard reveal d2">
+        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-cpu"/></svg></div>
+        <h3>AI 辅助 · 人工签发</h3>
+        <p>AI 高效梳理每一项，再由人工逐条复核后签发——效率与严谨兼顾。</p>
+      </div>
+    </div>
   </div>
-  <div style="opacity:.7;font-size:14px">想要逐项标清的完整报告 →</div>
-  <div class="big">¥9,800<small> / 份</small></div>
-  <div class="sub">完整《买付前体检报告》· 人工复核签发</div>
-  <div style="margin-top:22px"><a class="cta sm" href="#contact">先免费拆一份看看</a></div>
 </section>
 
-<section class="discl">
-  <p>※ 本服务为<b>风险信息梳理与解读（情報提供）</b>，帮助你在买房前看清潜在风险，<b>不构成法律意见、投资建议或买卖决策</b>。具体法律、税务、登记及交易手续，请以持牌宅地建物取引士／司法書士／税理士等专业人士的意见为准。最终是否购买由你本人决定。</p>
+<!-- ===== steps ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">怎么开始</span>
+      <h2>第一步，免费</h2>
+      <p>先发重説给我，免费帮你拆一遍，告诉你最该担心的 3 件事——满意了，再做完整报告。</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step free reveal">
+        <span class="badge">第一步 · 免费</span>
+        <h3>免费帮你拆一份重説</h3>
+        <p>把重要事項説明書拍照发我，我先帮你做一次免费拆解，点出最该担心的 3 件事。</p>
+        <div class="flow">
+          <span class="pill"><svg class="ic" style="width:16px;height:16px;vertical-align:-3px;color:var(--green)"><use href="#ic-camera"/></svg> 发重説拍照</span>
+          <svg class="ic arr" style="width:18px;height:18px"><use href="#ic-arrow"/></svg>
+          <span class="pill">免费拆解</span>
+          <svg class="ic arr" style="width:18px;height:18px"><use href="#ic-arrow"/></svg>
+          <span class="pill">告诉你最该担心的 3 件事</span>
+        </div>
+        <a class="btn btn-primary" href="#contact">免费帮我拆一份重説</a>
+      </div>
+      <div class="step paid reveal d1">
+        <span class="badge">第二步 · 完整报告</span>
+        <h3>《买付前体检报告》</h3>
+        <p>8 维度逐项体检 + 重説逐条中文解读 + 红绿灯总评，人工复核签发，签约前心里有底。</p>
+        <div class="price">
+          <span class="amt">¥9,800</span>
+          <span class="unit">/ 份</span>
+          <span class="tag">人工复核签发</span>
+        </div>
+        <a class="btn btn-dark" href="#contact">先免费拆解，再决定</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="foot" id="contact">
-  <div class="t" style="color:#fff">把重説发我，免费拆解</div>
-  <p>扫码加我微信 / LINE，发给我重要事項説明書照片即可<br>不是中介，帮你看清风险，买不买你定</p>
-  <div class="qrs">
-    <div class="qrbox"><img src="wechat-qr.jpg" alt="微信二维码"><div class="lbl">微信</div><div class="id">lijzhang_</div></div>
-    <div class="qrbox"><img src="line-qr.jpg" alt="LINE 二维码"><div class="lbl">LINE</div><div class="id">lijzhang</div></div>
+<!-- ===== compliance ===== -->
+<section class="section compliance">
+  <div class="wrap">
+    <div class="disclaimer reveal">
+      <div class="dh"><svg class="ic"><use href="#ic-lock"/></svg>合规免责</div>
+      <p>本服务为风险信息梳理与解读（情報提供），不构成法律意见、投资建议或买卖决策；具体手续请咨询持牌宅地建物取引士 / 司法書士 / 税理士；是否购买由你本人决定。</p>
+    </div>
   </div>
-  <div class="tiny">东京不动产中文尽调 · MiraiWorks AI 出品<br>独立第三方风险信息服务 · 不代理买卖 · 不代写官署文书</div>
-</div>
+</section>
 
-</div></body></html>
+<!-- ===== contact ===== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="eyebrow" style="justify-content:center;display:inline-flex">现在就开始</span>
+      <h2>扫码加我，发重説即可</h2>
+      <p style="margin-left:auto;margin-right:auto">微信或 LINE 都行。发一份重要事項説明書，我先免费帮你拆。</p>
+    </div>
+    <div class="qr-grid reveal d1">
+      <div class="qr wx">
+        <div class="qbox"><img src="wechat-qr.jpg" alt="微信二维码 lijzhang_" /></div>
+        <div class="ch"><svg class="ic"><use href="#ic-wechat"/></svg>微信</div>
+        <div class="hd">lijzhang_</div>
+      </div>
+      <div class="qr line">
+        <div class="qbox"><img src="line-qr.jpg" alt="LINE 二维码 lijzhang" /></div>
+        <div class="ch"><svg class="ic"><use href="#ic-line"/></svg>LINE</div>
+        <div class="hd">lijzhang</div>
+      </div>
+    </div>
+    <div class="contact-note reveal d2">
+      <svg class="ic"><use href="#ic-shield"/></svg>
+      第一步免费 · 满意了再决定要不要完整报告
+    </div>
+  </div>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+      <svg class="mark"><use href="#ic-mark"/></svg>
+      <b>东京不动产 · 中文尽调</b>
+    </div>
+    <p class="fline">MiraiWorks AI 出品 · 独立第三方风险信息服务</p>
+    <p class="fline">不代理买卖 · 不代写官署文书</p>
+    <p class="fmini">© 2026 MiraiWorks AI　|　情報提供サービス · 非媒介 · 非法律/税务意见</p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = [].slice.call(document.querySelectorAll('.reveal:not(.in)'));
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length < 2) return;
+      var t = document.querySelector(id);
+      if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - 50, behavior:'smooth'}); }
+    });
+  });
+</script>
+</body>
+</html>
