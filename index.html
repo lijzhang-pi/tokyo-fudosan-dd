@@ -2,715 +2,261 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>东京不动产中文尽调 · 买付前体检</title>
-<meta name="description" content="在日本买房签约前，让一个看得懂日文重要事項説明書的中国人，帮你把房子的风险一项项看清楚。独立第三方，不是中介，无利益冲突。" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>东京·此刻 — tokyo-china.com</title>
+<meta name="description" content="东京此刻的光、季节与一句诗。一个安静的角落。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --ink:#0B1622;
-    --navy:#0E2A47;
-    --navy-2:#13395f;
-    --paper:#FBFAF6;
-    --paper-2:#F3F0E9;
-    --card:#FFFFFF;
-    --line:#E7E2D6;
-    --line-strong:#D8D2C4;
-    --text:#1A2530;
-    --muted:#5C6A77;
-    --muted-2:#8A94A0;
-    --green:#1E7A55;
-    --green-2:#176545;
-    --green-soft:#E8F1EC;
-    --gold:#A8854E;
-    --gold-soft:#F2EADC;
-    --red:#C0453E;
-    --red-soft:#F7E7E5;
-    --amber:#CF9433;
-    --amber-soft:#F7EFDC;
-    --shadow-sm:0 1px 2px rgba(11,22,34,.04), 0 2px 8px rgba(11,22,34,.05);
-    --shadow-md:0 4px 14px rgba(11,22,34,.07), 0 14px 40px rgba(11,22,34,.06);
-    --shadow-lg:0 10px 30px rgba(11,22,34,.10), 0 30px 70px rgba(11,22,34,.10);
-    --r:14px;
-    --r-lg:20px;
-    --maxw:600px;
-  }
-
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
+  :root{ --fg:#fff; --fg-soft:rgba(255,255,255,.78); --fg-faint:rgba(255,255,255,.5); }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
   body{
-    margin:0;
-    font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-    color:var(--text);
-    background:var(--paper);
-    line-height:1.8;
-    font-size:16px;
-    letter-spacing:.01em;
+    font-family:"Noto Serif SC","Noto Serif JP",serif;
+    color:var(--fg);
+    background:#0b1126;
+    overflow:hidden;
     -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
-  h1,h2,h3{font-family:"Noto Serif SC",serif;font-weight:600;line-height:1.32;letter-spacing:.005em;margin:0;}
-  p{margin:0;}
-  a{color:inherit;text-decoration:none;}
-  .serif{font-family:"Noto Serif SC",serif;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
-  .section{padding:60px 0;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:12.5px;font-weight:700;letter-spacing:.14em;
-    color:var(--green-2);text-transform:uppercase;
-    margin-bottom:16px;
+  #sky{position:fixed;inset:0;z-index:0;transition:background 4s linear;}
+  #veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 18%, transparent 40%, rgba(0,0,0,.28) 100%);}
+  canvas{position:fixed;inset:0;z-index:2;display:block;}
+  .stage{
+    position:fixed;inset:0;z-index:3;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:7vh 26px calc(7vh + env(safe-area-inset-bottom));
+    gap:0;
   }
-  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--gold);display:inline-block;}
-  .lede{color:var(--muted);font-size:16.5px;}
-
-  /* icons */
-  .ic{width:22px;height:22px;display:inline-block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;}
-  .ic-lg{width:26px;height:26px;}
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:sticky;top:0;z-index:40;
-    background:rgba(11,22,34,.86);
-    backdrop-filter:saturate(140%) blur(10px);
-    -webkit-backdrop-filter:saturate(140%) blur(10px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+  .greet{
+    font-size:clamp(15px,4.2vw,19px);letter-spacing:.32em;
+    color:var(--fg-soft);font-weight:300;margin-bottom:26px;
+    opacity:0;animation:rise 1.6s .2s ease forwards;
   }
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
-  .brand{display:flex;align-items:center;gap:10px;color:#F4F6F8;}
-  .brand .mark{width:30px;height:30px;flex:none;color:var(--gold);}
-  .brand b{font-family:"Noto Serif SC",serif;font-weight:600;font-size:15.5px;letter-spacing:.02em;white-space:nowrap;}
-  .brand span{font-size:11.5px;color:#9FB0C0;display:block;letter-spacing:.18em;font-weight:500;margin-top:-2px;}
-  .topbar .nav-cta{
-    font-size:13px;font-weight:700;color:var(--ink);
-    background:#fff;padding:8px 15px;border-radius:999px;white-space:nowrap;
-    transition:transform .18s ease, box-shadow .18s ease;
+  .greet .dot{opacity:.5;margin:0 .5em;}
+  .clock{
+    font-variant-numeric:tabular-nums;font-weight:300;
+    font-size:clamp(58px,19vw,140px);line-height:1;letter-spacing:.02em;
+    text-shadow:0 2px 40px rgba(0,0,0,.25);
+    opacity:0;animation:rise 1.8s .35s ease forwards;
   }
-  .topbar .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25);}
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    background:
-      radial-gradient(120% 80% at 80% -10%, rgba(30,122,85,.18), transparent 55%),
-      radial-gradient(120% 90% at -10% 10%, rgba(19,57,95,.5), transparent 50%),
-      linear-gradient(180deg,#0B1622 0%, #0C1E33 60%, #0E2A47 100%);
-    color:#EAF0F5;
-    overflow:hidden;
+  .clock .sec{font-size:.34em;opacity:.55;letter-spacing:.04em;margin-left:.18em;font-weight:300;}
+  .meta{
+    margin-top:22px;font-size:clamp(13px,3.6vw,16px);letter-spacing:.18em;
+    color:var(--fg-soft);font-weight:300;
+    opacity:0;animation:rise 1.8s .5s ease forwards;
   }
-  .hero::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:46px 46px;
-    mask-image:radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
-    -webkit-mask-image:radial-gradient(120% 80% at 50% 0%, #000 30%, transparent 75%);
+  .meta .sep{opacity:.45;margin:0 .7em;}
+  .rule{width:46px;height:1px;background:var(--fg-faint);margin:40px 0 34px;
+    opacity:0;animation:grow 2s .8s ease forwards;}
+  .poem{max-width:24em;opacity:0;animation:rise 2s 1s ease forwards;}
+  .poem .zh{font-size:clamp(19px,5.2vw,26px);font-weight:400;line-height:1.85;letter-spacing:.06em;}
+  .poem .ja{margin-top:12px;font-family:"Noto Serif JP",serif;font-weight:300;
+    font-size:clamp(13px,3.6vw,16px);letter-spacing:.1em;color:var(--fg-faint);line-height:1.8;}
+  .sign{
+    position:fixed;left:0;right:0;bottom:calc(20px + env(safe-area-inset-bottom));z-index:3;
+    text-align:center;font-size:11.5px;letter-spacing:.26em;color:var(--fg-faint);
+    font-weight:300;opacity:0;animation:rise 2.4s 1.6s ease forwards;
   }
-  .hero .wrap{position:relative;z-index:1;padding-top:54px;padding-bottom:64px;}
-  .trust-tag{
-    display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;
-    border:1px solid rgba(255,255,255,.18);
-    background:rgba(255,255,255,.04);
-    color:#CFE6DA;
-    padding:7px 14px;border-radius:999px;
-    font-size:12.5px;font-weight:600;letter-spacing:.04em;
-  }
-  .trust-tag .dot{width:7px;height:7px;border-radius:50%;background:#3EBB85;box-shadow:0 0 0 4px rgba(62,187,133,.18);}
-  .trust-tag i{font-style:normal;color:#9FB6C8;}
-  .hero h1{
-    font-size:clamp(31px,8.4vw,50px);
-    font-weight:700;color:#FCFDFE;
-    margin:24px 0 0;letter-spacing:.01em;
-  }
-  .hero h1 .hl{color:#5FCF9C;}
-  .hero .sub{
-    margin-top:20px;color:#B9C7D4;font-size:clamp(15.5px,4vw,18px);
-    line-height:1.85;max-width:33em;
-  }
-  .hero .sub b{color:#E7EEF3;font-weight:500;}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:"Noto Sans SC",sans-serif;font-weight:700;font-size:16px;
-    padding:15px 24px;border-radius:12px;border:1px solid transparent;cursor:pointer;
-    transition:transform .18s ease, box-shadow .2s ease, background .2s ease;
-    letter-spacing:.02em;
-  }
-  .btn-primary{
-    background:linear-gradient(180deg,#2A9568,#1E7A55);color:#fff;
-    box-shadow:0 6px 20px rgba(30,122,85,.36), inset 0 1px 0 rgba(255,255,255,.18);
-  }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(30,122,85,.46), inset 0 1px 0 rgba(255,255,255,.2);}
-  .btn-primary:active{transform:translateY(0);}
-  .btn-ghost{
-    background:rgba(255,255,255,.05);color:#E7EEF3;border-color:rgba(255,255,255,.22);
-  }
-  .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
-  .hero-meta{
-    display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;
-    color:#90A4B5;font-size:13px;
-  }
-  .hero-meta span{display:inline-flex;align-items:center;gap:7px;}
-  .hero-meta .ic{width:17px;height:17px;stroke-width:1.7;color:#5FCF9C;}
-
-  /* ---------- generic section heads ---------- */
-  .sec-head{margin-bottom:30px;}
-  .sec-head h2{font-size:clamp(24px,6vw,34px);color:var(--ink);}
-  .sec-head p{margin-top:12px;color:var(--muted);max-width:34em;}
-
-  /* ---------- pain ---------- */
-  .pain{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .pain-list{display:grid;gap:14px;}
-  .pain-item{
-    display:flex;gap:15px;align-items:flex-start;
-    background:var(--card);border:1px solid var(--line);
-    border-radius:var(--r);padding:18px 18px;box-shadow:var(--shadow-sm);
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .pain-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--line-strong);}
-  .pain-item .pi-ic{
-    flex:none;width:42px;height:42px;border-radius:11px;
-    display:grid;place-items:center;color:var(--red);
-    background:var(--red-soft);border:1px solid rgba(192,69,62,.18);
-  }
-  .pain-item .pi-ic .ic{width:21px;height:21px;}
-  .pain-item h3{font-size:16.5px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.5;}
-  .pain-item p{font-size:14.5px;color:var(--muted);line-height:1.7;}
-
-  /* ---------- report ---------- */
-  .report-intro h2{font-size:clamp(24px,6vw,34px);color:var(--ink);}
-  .report-intro p{margin-top:12px;color:var(--muted);}
-
-  .report{
-    margin-top:30px;
-    background:var(--card);
-    border:1px solid var(--line-strong);
-    border-radius:var(--r-lg);
-    box-shadow:var(--shadow-lg);
-    overflow:hidden;
-  }
-  .rep-head{
-    background:linear-gradient(180deg,#0E2A47,#0B1F36);
-    color:#EAF0F5;padding:20px 22px;
-    display:flex;align-items:center;justify-content:space-between;gap:14px;
-  }
-  .rep-head .t b{font-family:"Noto Serif SC",serif;font-weight:600;font-size:17px;display:block;}
-  .rep-head .t span{font-size:12px;color:#9FB6C8;letter-spacing:.04em;}
-  .rep-head .sample{
-    flex:none;font-size:11px;font-weight:700;letter-spacing:.18em;
-    color:var(--gold);border:1px solid rgba(168,133,78,.55);
-    padding:5px 10px;border-radius:7px;background:rgba(168,133,78,.1);
-  }
-  /* 总评 strip */
-  .rep-verdict{
-    padding:18px 22px;border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg,#FCFBF8,#F7F4EE);
-  }
-  .rep-verdict .vh{display:flex;align-items:center;gap:12px;margin-bottom:13px;}
-  .lights{display:flex;gap:6px;flex:none;}
-  .lights i{width:13px;height:13px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.06);}
-  .lights .g{background:var(--green);}
-  .lights .a{background:var(--amber);}
-  .lights .r{background:var(--red);}
-  .rep-verdict .vh b{font-family:"Noto Serif SC",serif;font-size:15.5px;color:var(--ink);}
-  .rep-verdict .vh em{font-style:normal;font-size:12.5px;color:var(--red);font-weight:700;margin-left:auto;}
-  .top3{display:grid;gap:8px;}
-  .top3 li{
-    display:flex;align-items:flex-start;gap:10px;list-style:none;
-    font-size:14px;color:var(--text);line-height:1.6;
-  }
-  .top3 .chip-dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:7px;}
-  .top3 .r{background:var(--red);}.top3 .a{background:var(--amber);}
-  ul.top3{margin:0;padding:0;}
-
-  /* dimension rows */
-  .rep-dims{padding:6px 0;}
-  .dim{
-    display:flex;align-items:center;gap:13px;
-    padding:13px 22px;border-top:1px solid var(--line);
-  }
-  .dim:first-child{border-top:none;}
-  .dim .num{font-size:11px;color:var(--muted-2);font-weight:700;width:18px;flex:none;font-variant-numeric:tabular-nums;}
-  .dim .d-main{flex:1;min-width:0;}
-  .dim .d-main b{font-size:14.5px;font-weight:600;color:var(--ink);display:block;line-height:1.4;}
-  .dim .d-main span{font-size:12.5px;color:var(--muted);display:block;line-height:1.5;margin-top:1px;}
-  .status{
-    flex:none;font-size:11.5px;font-weight:700;letter-spacing:.02em;
-    padding:4px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;
-  }
-  .status .sd{width:7px;height:7px;border-radius:50%;}
-  .status.g{color:var(--green-2);background:var(--green-soft);} .status.g .sd{background:var(--green);}
-  .status.a{color:#9a6e16;background:var(--amber-soft);} .status.a .sd{background:var(--amber);}
-  .status.r{color:#9c302a;background:var(--red-soft);} .status.r .sd{background:var(--red);}
-  .rep-foot{
-    padding:14px 22px;border-top:1px solid var(--line);
-    font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;
-    background:#FBFAF7;
-  }
-  .rep-foot .ic{width:16px;height:16px;color:var(--green);}
-
-  /* legend */
-  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;justify-content:center;}
-  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);}
-  .legend i{width:10px;height:10px;border-radius:50%;}
-
-  /* ---------- trust ---------- */
-  .trust{background:var(--ink);color:#E7EEF3;}
-  .trust .eyebrow{color:#6FD3A2;}
-  .trust .eyebrow::before{background:var(--gold);}
-  .trust .sec-head h2{color:#FCFDFE;}
-  .trust-grid{display:grid;gap:14px;}
-  .tcard{
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:var(--r);padding:22px 20px;
-    transition:transform .2s ease, background .2s ease, border-color .2s ease;
-  }
-  .tcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.06);border-color:rgba(111,211,162,.4);}
-  .tcard .tc-ic{
-    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-    color:#6FD3A2;background:rgba(30,122,85,.18);border:1px solid rgba(111,211,162,.3);margin-bottom:15px;
-  }
-  .tcard h3{color:#FCFDFE;font-size:18px;margin-bottom:8px;}
-  .tcard p{color:#9FB2C2;font-size:14.5px;line-height:1.75;}
-
-  /* ---------- steps ---------- */
-  .steps-grid{display:grid;gap:16px;}
-  .step{
-    position:relative;background:var(--card);border:1px solid var(--line);
-    border-radius:var(--r-lg);padding:24px 22px;box-shadow:var(--shadow-sm);
-  }
-  .step .badge{
-    display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
-    letter-spacing:.1em;padding:5px 12px;border-radius:999px;margin-bottom:14px;
-  }
-  .step.free{border-color:rgba(30,122,85,.35);box-shadow:0 4px 18px rgba(30,122,85,.1);}
-  .step.free .badge{color:var(--green-2);background:var(--green-soft);}
-  .step.paid .badge{color:var(--gold);background:var(--gold-soft);}
-  .step h3{font-size:20px;color:var(--ink);margin-bottom:8px;}
-  .step p{color:var(--muted);font-size:14.5px;line-height:1.75;}
-  .step .flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:16px;}
-  .flow .pill{
-    font-size:13px;font-weight:600;color:var(--text);background:var(--paper-2);
-    border:1px solid var(--line);border-radius:9px;padding:7px 12px;
-  }
-  .flow .arr{color:var(--muted-2);}
-  .price{display:flex;align-items:baseline;gap:10px;margin-top:16px;}
-  .price .amt{font-family:"Noto Serif SC",serif;font-size:34px;font-weight:700;color:var(--ink);}
-  .price .unit{font-size:14px;color:var(--muted);}
-  .price .tag{
-    margin-left:auto;font-size:12px;font-weight:700;color:var(--green-2);
-    background:var(--green-soft);padding:5px 11px;border-radius:999px;
-  }
-  .step .btn{margin-top:20px;width:100%;}
-  .btn-dark{background:var(--ink);color:#fff;}
-  .btn-dark:hover{background:#16273a;transform:translateY(-2px);box-shadow:var(--shadow-md);}
-
-  /* ---------- compliance ---------- */
-  .compliance{background:var(--paper-2);border-top:1px solid var(--line);}
-  .disclaimer{
-    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);
-    border-radius:12px;padding:20px 20px;
-  }
-  .disclaimer .dh{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ink);font-size:14px;margin-bottom:10px;}
-  .disclaimer .dh .ic{width:18px;height:18px;color:var(--gold);}
-  .disclaimer p{font-size:13px;color:var(--muted);line-height:1.85;}
-
-  /* ---------- contact ---------- */
-  .contact{background:var(--ink);color:#E7EEF3;}
-  .contact .eyebrow{color:#6FD3A2;}
-  .contact .sec-head h2{color:#FCFDFE;}
-  .contact .sec-head p{color:#9FB2C2;}
-  .qr-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
-  .qr{
-    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
-    border-radius:var(--r);padding:18px 16px;text-align:center;
-    transition:transform .2s ease, border-color .2s ease;
-  }
-  .qr:hover{transform:translateY(-3px);border-color:rgba(111,211,162,.4);}
-  .qr .qbox{
-    width:100%;aspect-ratio:1;background:#fff;border-radius:10px;overflow:hidden;
-    display:grid;place-items:center;margin-bottom:13px;
-  }
-  .qr .qbox img{width:100%;height:100%;object-fit:contain;display:block;}
-  .qr .ch{font-size:13px;font-weight:700;color:#FCFDFE;display:flex;align-items:center;justify-content:center;gap:7px;}
-  .qr .ch .ic{width:16px;height:16px;}
-  .qr .hd{font-size:13px;color:#8FA6B7;margin-top:3px;font-family:"Noto Sans SC";letter-spacing:.02em;}
-  .qr.wx .ch .ic{color:#3EBB85;}
-  .qr.line .ch .ic{color:#4CC764;}
-  .contact-note{
-    text-align:center;margin-top:22px;color:#9FB2C2;font-size:14px;
-    display:flex;align-items:center;justify-content:center;gap:8px;
-  }
-  .contact-note .ic{width:18px;height:18px;color:#6FD3A2;}
-
-  /* ---------- footer ---------- */
-  footer{background:#070E16;color:#7C8B99;padding:30px 0 36px;}
-  footer .wrap{text-align:center;}
-  footer .fbrand{display:inline-flex;align-items:center;gap:9px;color:#C7D2DC;margin-bottom:12px;}
-  footer .fbrand .mark{width:24px;height:24px;color:var(--gold);}
-  footer .fbrand b{font-family:"Noto Serif SC",serif;font-size:14px;font-weight:600;}
-  footer .fline{font-size:12.5px;line-height:1.9;color:#7C8B99;}
-  footer .fmini{font-size:11.5px;color:#4F5E6C;margin-top:12px;letter-spacing:.02em;}
-
-  /* ---------- reveal anim ---------- */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
-  .reveal.in{opacity:1;transform:none;}
-  .reveal.d1{transition-delay:.07s;}
-  .reveal.d2{transition-delay:.14s;}
-  .reveal.d3{transition-delay:.21s;}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
-    .btn,.tcard,.pain-item,.qr{transition:none;}
-  }
-
-  /* ---------- responsive up ---------- */
-  @media (min-width:680px){
-    :root{--maxw:680px;}
-    .section{padding:78px 0;}
-    .trust-grid{grid-template-columns:repeat(3,1fr);}
-    .steps-grid{grid-template-columns:1fr 1fr;align-items:start;}
-    .pain-list{grid-template-columns:1fr 1fr;}
-    .hero .wrap{padding-top:70px;padding-bottom:86px;}
-  }
-  @media (min-width:920px){
-    :root{--maxw:740px;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  @keyframes grow{from{opacity:0;transform:scaleX(.2);}to{opacity:1;transform:none;}}
+  /* 呼吸 */
+  .breathe{animation:rise 1.8s .35s ease forwards, breathe 7s 2.4s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{filter:brightness(1);}50%{filter:brightness(1.08);}}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.6s !important;animation-iteration-count:1 !important;}
+    #sky{transition:none;}
   }
 </style>
 </head>
 <body>
+  <div id="sky"></div>
+  <canvas id="c"></canvas>
+  <div id="veil"></div>
 
-<!-- ===== inline icon symbols ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3z"/><path d="M9.2 12l2 2 3.6-4"/></symbol>
-  <symbol id="ic-mark" viewBox="0 0 24 24"><path d="M4 10.5L12 4l8 6.5"/><path d="M6 10v9h12v-9"/><circle cx="14.5" cy="14.5" r="2.4"/><path d="M16.2 16.2l1.8 1.8"/></symbol>
-  <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15h6M9.5 9h2"/></symbol>
-  <symbol id="ic-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.2A9 9 0 0 1 12 6c5 0 9 6 9 6a16 16 0 0 1-2.3 2.9M6.1 7.9C3.8 9.4 3 12 3 12s4 6 9 6a8.7 8.7 0 0 0 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
-  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v5M12 17.5v.01"/></symbol>
-  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.7 5.4 3.7 8.5s-1.3 6.2-3.7 8.5c-2.4-2.3-3.7-5.4-3.7-8.5S9.6 5.8 12 3.5z"/></symbol>
-  <symbol id="ic-balance" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 7h14M5 7l-2.2 5a3 3 0 0 0 4.4 0L5 7zM19 7l-2.2 5a3 3 0 0 0 4.4 0L19 7z"/><path d="M9 4.5l6-1"/></symbol>
-  <symbol id="ic-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10.5 10.5h3v3h-3z"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
-  <symbol id="ic-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5.5" ry="2.6"/><path d="M3.5 7v5c0 1.4 2.5 2.6 5.5 2.6s5.5-1.2 5.5-2.6V7"/><path d="M9 14.6V17c0 1.4 2.5 2.6 5.5 2.6S20 18.4 20 17v-5"/><path d="M14.5 9.4c2.8.1 5.5 1.2 5.5 2.6"/></symbol>
-  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
-  <symbol id="ic-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 6"/></symbol>
-  <symbol id="ic-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></symbol>
-  <symbol id="ic-wechat" viewBox="0 0 24 24"><path d="M9 4.5c-3.6 0-6.5 2.4-6.5 5.4 0 1.7 1 3.2 2.5 4.2L4.5 16l2.3-1.2c.7.2 1.4.3 2.2.3"/><path d="M21.5 14.6c0-2.6-2.5-4.7-5.6-4.7s-5.6 2.1-5.6 4.7 2.5 4.7 5.6 4.7c.7 0 1.3-.1 1.9-.3l2 1-.5-1.6c1.4-.9 2.2-2.2 2.2-3.5z"/></symbol>
-  <symbol id="ic-line" viewBox="0 0 24 24"><path d="M21 10.3C21 6.3 17 3 12 3S3 6.3 3 10.3c0 3.6 3.2 6.6 7.5 7.2.3 0 .7.2.8.4.1.3.1.7 0 1l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-4.6z"/></symbol>
-  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
-</svg>
-
-<!-- ===== top bar ===== -->
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="东京不动产 中文尽调">
-      <svg class="mark"><use href="#ic-mark"/></svg>
-      <span style="line-height:1.1">
-        <b>东京不动产 · 中文尽调</b>
-        <span>DUE&nbsp;DILIGENCE</span>
-      </span>
-    </a>
-    <a class="nav-cta" href="#contact">免费拆一份重説</a>
-  </div>
-</div>
-
-<!-- ===== hero ===== -->
-<header class="hero" id="top">
-  <div class="wrap">
-    <div class="reveal in">
-      <span class="trust-tag">
-        <span class="dot"></span>独立第三方<i>·</i>不是中介<i>·</i>无利益冲突
-      </span>
-    </div>
-    <h1 class="reveal in d1">买日本房子前，<br>先做一次<span class="hl">买付前体检</span></h1>
-    <p class="sub reveal in d2">
-      在日本签约前，让一个<b>看得懂日文「重要事項説明書」</b>的中国人，
-      帮你把这套房子的风险一项项看清楚。<br>独立第三方，不替任何人卖房。
-    </p>
-    <div class="cta-row reveal in d2">
-      <a class="btn btn-primary" href="#contact">
-        免费帮我拆一份重説
-        <svg class="ic"><use href="#ic-arrow"/></svg>
-      </a>
-      <a class="btn btn-ghost" href="#report">先看报告样张</a>
-    </div>
-    <div class="hero-meta reveal in d3">
-      <span><svg class="ic"><use href="#ic-check"/></svg>东京本地</span>
-      <span><svg class="ic"><use href="#ic-check"/></svg>读得懂法律日文重説</span>
-      <span><svg class="ic"><use href="#ic-check"/></svg>AI辅助 · 人工逐项复核</span>
+  <div class="stage">
+    <div class="greet" id="greet">　</div>
+    <div class="clock breathe"><span id="hm">--:--</span><span class="sec" id="sec"></span></div>
+    <div class="meta" id="meta">　</div>
+    <div class="rule"></div>
+    <div class="poem">
+      <div class="zh" id="pzh">　</div>
+      <div class="ja" id="pja">　</div>
     </div>
   </div>
-</header>
-
-<!-- ===== pain ===== -->
-<section class="section pain">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">为什么要做体检</span>
-      <h2>几千万日元的决定，<br>不该建立在「看不懂」上</h2>
-      <p>远程、不熟悉日本制度、被中介话术搞得焦虑——信息差，才是买房最大的风险。</p>
-    </div>
-    <div class="pain-list">
-      <div class="pain-item reveal">
-        <div class="pi-ic"><svg class="ic"><use href="#ic-doc"/></svg></div>
-        <div>
-          <h3>重説几十页，全日文</h3>
-          <p>密密麻麻的法律日文，看不懂也不敢签字——但签了就生效。</p>
-        </div>
-      </div>
-      <div class="pain-item reveal d1">
-        <div class="pi-ic"><svg class="ic"><use href="#ic-eye-off"/></svg></div>
-        <div>
-          <h3>中介是卖方的</h3>
-          <p>他赚的是成交佣金，不会主动告诉你这套房子的雷埋在哪。</p>
-        </div>
-      </div>
-      <div class="pain-item reveal d2">
-        <div class="pi-ic"><svg class="ic"><use href="#ic-alert"/></svg></div>
-        <div>
-          <h3>一个没看出来，套牢上千万</h3>
-          <p>再建築不可 / 借地権 / 事故物件 / 修繕積立金滞納——任何一项都可能让房子砸手里。</p>
-        </div>
-      </div>
-      <div class="pain-item reveal d3">
-        <div class="pi-ic"><svg class="ic"><use href="#ic-globe"/></svg></div>
-        <div>
-          <h3>远程买房，信息差更大</h3>
-          <p>人不在现场，看的是中介给的版本——更需要一双独立的眼睛。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== report ===== -->
-<section class="section" id="report">
-  <div class="wrap">
-    <div class="report-intro sec-head reveal">
-      <span class="eyebrow">你会拿到什么</span>
-      <h2>一份看得见的《买付前体检报告》</h2>
-      <p>8 个风险维度逐项体检，红绿灯总评一眼看懂——最该担心的 3 件事，写在最前面。</p>
-    </div>
-
-    <div class="report reveal d1" role="img" aria-label="买付前体检报告样张">
-      <div class="rep-head">
-        <div class="t">
-          <b>买付前体检报告</b>
-          <span>東京都 · 区分マンション · 築22年（示例物件）</span>
-        </div>
-        <span class="sample">SAMPLE 样张</span>
-      </div>
-
-      <div class="rep-verdict">
-        <div class="vh">
-          <span class="lights"><i class="g"></i><i class="a"></i><i class="r"></i></span>
-          <b>红绿灯总评</b>
-          <em>需重点关注</em>
-        </div>
-        <ul class="top3">
-          <li><span class="chip-dot r"></span><span><b style="font-weight:700">最该担心①</b>　接道仅 1.8m，<b style="font-weight:700">再建築不可</b>的可能性——重建受限，转售困难。</span></li>
-          <li><span class="chip-dot a"></span><span><b style="font-weight:700">最该担心②</b>　<b style="font-weight:700">修繕積立金</b>偏低且有滞納记录，未来大修恐需临时补缴。</span></li>
-          <li><span class="chip-dot a"></span><span><b style="font-weight:700">最该担心③</b>　位于<b style="font-weight:700">浸水想定 0.5–3m</b>区域，台风季有进水风险。</span></li>
-        </ul>
-      </div>
-
-      <div class="rep-dims">
-        <div class="dim">
-          <span class="num">01</span>
-          <div class="d-main"><b>権利関係</b><span>所有権・无抵押，非借地権</span></div>
-          <span class="status g"><span class="sd"></span>正常</span>
-        </div>
-        <div class="dim">
-          <span class="num">02</span>
-          <div class="d-main"><b>法令制限（再建築不可）</b><span>接道不足，重建受限</span></div>
-          <span class="status r"><span class="sd"></span>高风险</span>
-        </div>
-        <div class="dim">
-          <span class="num">03</span>
-          <div class="d-main"><b>マンション健康度</b><span>修繕積立金偏低 · 有滞納</span></div>
-          <span class="status a"><span class="sd"></span>留意</span>
-        </div>
-        <div class="dim">
-          <span class="num">04</span>
-          <div class="d-main"><b>心理瑕疵（事故物件）</b><span>告知事項なし</span></div>
-          <span class="status g"><span class="sd"></span>正常</span>
-        </div>
-        <div class="dim">
-          <span class="num">05</span>
-          <div class="d-main"><b>灾害风险（浸水・地震）</b><span>浸水想定 0.5–3m 区域</span></div>
-          <span class="status a"><span class="sd"></span>留意</span>
-        </div>
-        <div class="dim">
-          <span class="num">06</span>
-          <div class="d-main"><b>持有成本（固都税・管理費）</b><span>年约 ¥18 万，合理区间</span></div>
-          <span class="status g"><span class="sd"></span>正常</span>
-        </div>
-        <div class="dim">
-          <span class="num">07</span>
-          <div class="d-main"><b>投资回报（利回り）</b><span>表面 4.2% · 实际约 3.1%</span></div>
-          <span class="status a"><span class="sd"></span>留意</span>
-        </div>
-        <div class="dim">
-          <span class="num">08</span>
-          <div class="d-main"><b>重説逐条中文解读</b><span>全 32 条 · 已逐条标注</span></div>
-          <span class="status g"><span class="sd"></span>已完成</span>
-        </div>
-      </div>
-
-      <div class="rep-foot">
-        <svg class="ic"><use href="#ic-shield"/></svg>
-        AI 辅助梳理 · 人工逐项复核签发 · 仅为风险信息提供，非法律/投资意见
-      </div>
-    </div>
-
-    <div class="legend reveal d2">
-      <span><i style="background:var(--green)"></i>正常 · 可放心</span>
-      <span><i style="background:var(--amber)"></i>留意 · 需确认</span>
-      <span><i style="background:var(--red)"></i>高风险 · 重点</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== trust ===== -->
-<section class="section trust">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">为什么信我</span>
-      <h2>不替任何人卖房，<br>只对你的风险负责</h2>
-    </div>
-    <div class="trust-grid">
-      <div class="tcard reveal">
-        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-pin"/></svg></div>
-        <h3>东京本地 · 懂法律日文</h3>
-        <p>就在东京，读得懂重要事項説明書里那些藏在法律日文中的关键条款。</p>
-      </div>
-      <div class="tcard reveal d1">
-        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-balance"/></svg></div>
-        <h3>独立第三方 · 无利益冲突</h3>
-        <p>不是中介、不赚买卖差价、不收卖方一分钱——立场只站在买家这边。</p>
-      </div>
-      <div class="tcard reveal d2">
-        <div class="tc-ic"><svg class="ic ic-lg"><use href="#ic-cpu"/></svg></div>
-        <h3>AI 辅助 · 人工签发</h3>
-        <p>AI 高效梳理每一项，再由人工逐条复核后签发——效率与严谨兼顾。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== steps ===== -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">怎么开始</span>
-      <h2>第一步，免费</h2>
-      <p>先发重説给我，免费帮你拆一遍，告诉你最该担心的 3 件事——满意了，再做完整报告。</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step free reveal">
-        <span class="badge">第一步 · 免费</span>
-        <h3>免费帮你拆一份重説</h3>
-        <p>把重要事項説明書拍照发我，我先帮你做一次免费拆解，点出最该担心的 3 件事。</p>
-        <div class="flow">
-          <span class="pill"><svg class="ic" style="width:16px;height:16px;vertical-align:-3px;color:var(--green)"><use href="#ic-camera"/></svg> 发重説拍照</span>
-          <svg class="ic arr" style="width:18px;height:18px"><use href="#ic-arrow"/></svg>
-          <span class="pill">免费拆解</span>
-          <svg class="ic arr" style="width:18px;height:18px"><use href="#ic-arrow"/></svg>
-          <span class="pill">告诉你最该担心的 3 件事</span>
-        </div>
-        <a class="btn btn-primary" href="#contact">免费帮我拆一份重説</a>
-      </div>
-      <div class="step paid reveal d1">
-        <span class="badge">第二步 · 完整报告</span>
-        <h3>《买付前体检报告》</h3>
-        <p>8 维度逐项体检 + 重説逐条中文解读 + 红绿灯总评，人工复核签发，签约前心里有底。</p>
-        <div class="price">
-          <span class="amt">¥9,800</span>
-          <span class="unit">/ 份</span>
-          <span class="tag">人工复核签发</span>
-        </div>
-        <a class="btn btn-dark" href="#contact">先免费拆解，再决定</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== compliance ===== -->
-<section class="section compliance">
-  <div class="wrap">
-    <div class="disclaimer reveal">
-      <div class="dh"><svg class="ic"><use href="#ic-lock"/></svg>合规免责</div>
-      <p>本服务为风险信息梳理与解读（情報提供），不构成法律意见、投资建议或买卖决策；具体手续请咨询持牌宅地建物取引士 / 司法書士 / 税理士；是否购买由你本人决定。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== contact ===== -->
-<section class="section contact" id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center">
-      <span class="eyebrow" style="justify-content:center;display:inline-flex">现在就开始</span>
-      <h2>扫码加我，发重説即可</h2>
-      <p style="margin-left:auto;margin-right:auto">微信或 LINE 都行。发一份重要事項説明書，我先免费帮你拆。</p>
-    </div>
-    <div class="qr-grid reveal d1">
-      <div class="qr wx">
-        <div class="qbox"><img src="wechat-qr.jpg" alt="微信二维码 lijzhang_" /></div>
-        <div class="ch"><svg class="ic"><use href="#ic-wechat"/></svg>微信</div>
-        <div class="hd">lijzhang_</div>
-      </div>
-      <div class="qr line">
-        <div class="qbox"><img src="line-qr.jpg" alt="LINE 二维码 lijzhang" /></div>
-        <div class="ch"><svg class="ic"><use href="#ic-line"/></svg>LINE</div>
-        <div class="hd">lijzhang</div>
-      </div>
-    </div>
-    <div class="contact-note reveal d2">
-      <svg class="ic"><use href="#ic-shield"/></svg>
-      第一步免费 · 满意了再决定要不要完整报告
-    </div>
-  </div>
-</section>
-
-<!-- ===== footer ===== -->
-<footer>
-  <div class="wrap">
-    <div class="fbrand">
-      <svg class="mark"><use href="#ic-mark"/></svg>
-      <b>东京不动产 · 中文尽调</b>
-    </div>
-    <p class="fline">MiraiWorks AI 出品 · 独立第三方风险信息服务</p>
-    <p class="fline">不代理买卖 · 不代写官署文书</p>
-    <p class="fmini">© 2026 MiraiWorks AI　|　情報提供サービス · 非媒介 · 非法律/税务意见</p>
-  </div>
-</footer>
+  <div class="sign">tokyo-china.com　·　一个安静的角落</div>
 
 <script>
-  // scroll reveal
-  (function(){
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var els = [].slice.call(document.querySelectorAll('.reveal:not(.in)'));
-    if(reduce || !('IntersectionObserver' in window)){
-      els.forEach(function(e){e.classList.add('in');});
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){ io.observe(e); });
-  })();
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var qs = new URLSearchParams(location.search);
 
-  // smooth anchor scroll
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if(id.length < 2) return;
-      var t = document.querySelector(id);
-      if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.pageYOffset - 50, behavior:'smooth'}); }
-    });
-  });
+  // ---- 东京时间 ----
+  function tokyoNow(){
+    var d = new Date();
+    if(qs.has("hour")){ // 调试用：?hour=20
+      d.setHours(parseInt(qs.get("hour"),10)||0, parseInt(qs.get("min")||"24",10), 0);
+      return {d:d, h:d.getHours()+d.getMinutes()/60, hh:d.getHours(), mm:d.getMinutes(), ss:d.getSeconds(),
+              mon:(parseInt(qs.get("mon")||(d.getMonth()+1),10)), date:d.getDate(), dow:d.getDay()};
+    }
+    var p = new Intl.DateTimeFormat("zh-CN",{timeZone:"Asia/Tokyo",hour:"2-digit",minute:"2-digit",
+      second:"2-digit",hour12:false,year:"numeric",month:"numeric",day:"numeric",weekday:"short"}).formatToParts(d);
+    var o={}; p.forEach(function(x){o[x.type]=x.value;});
+    var hh=parseInt(o.hour,10)%24, mm=parseInt(o.minute,10), ss=parseInt(o.second,10);
+    var dowMap={"周日":0,"周一":1,"周二":2,"周三":3,"周四":4,"周五":5,"周六":6};
+    return {h:hh+mm/60, hh:hh, mm:mm, ss:ss, mon:parseInt(o.month,10), date:parseInt(o.day,10),
+            dow:dowMap[o.weekday]!=null?dowMap[o.weekday]:new Date().getDay(), year:parseInt(o.year,10)};
+  }
+
+  // ---- 时段天色（关键帧插值） ----
+  var KEYS=[ // h, 顶色, 底色, 星亮度
+    {h:0,  top:[7,11,24],   bot:[16,24,46],  star:1.0},
+    {h:5,  top:[28,35,64],  bot:[233,169,139],star:.35},
+    {h:7,  top:[111,180,230],bot:[234,245,252],star:0},
+    {h:12, top:[132,194,239],bot:[241,248,253],star:0},
+    {h:16, top:[169,198,230],bot:[255,217,168],star:0},
+    {h:18, top:[90,74,120], bot:[243,160,106], star:.12},
+    {h:20, top:[11,17,38],  bot:[26,35,64],   star:.75},
+    {h:24, top:[7,11,24],   bot:[16,24,46],   star:1.0}
+  ];
+  function lerp(a,b,t){return a+(b-a)*t;}
+  function mix(c1,c2,t){return [Math.round(lerp(c1[0],c2[0],t)),Math.round(lerp(c1[1],c2[1],t)),Math.round(lerp(c1[2],c2[2],t))];}
+  function rgb(c){return "rgb("+c[0]+","+c[1]+","+c[2]+")";}
+  function palette(h){
+    for(var i=0;i<KEYS.length-1;i++){
+      if(h>=KEYS[i].h && h<=KEYS[i+1].h){
+        var t=(h-KEYS[i].h)/(KEYS[i+1].h-KEYS[i].h);
+        return {top:mix(KEYS[i].top,KEYS[i+1].top,t), bot:mix(KEYS[i].bot,KEYS[i+1].bot,t),
+                star:lerp(KEYS[i].star,KEYS[i+1].star,t)};
+      }
+    }
+    return {top:KEYS[0].top,bot:KEYS[0].bot,star:KEYS[0].star};
+  }
+
+  // ---- 季节 ----
+  function seasonOf(mon){ if(mon>=3&&mon<=5)return"spring"; if(mon>=6&&mon<=8)return"summer"; if(mon>=9&&mon<=11)return"autumn"; return"winter"; }
+  var SEASON_CN={spring:"春",summer:"夏",autumn:"秋",winter:"冬"};
+
+  // ---- 每日之诗 ----
+  var POEMS=[
+    {zh:"慢一点，风也在等你。", ja:"ゆっくりでいい、風も待っている。"},
+    {zh:"今天，也好好地过完它。", ja:"今日も、ちゃんと生きていく。"},
+    {zh:"花开的时候，记得抬头。", ja:"花の咲くころ、空を見上げて。"},
+    {zh:"两座城之间，你也是一座桥。", ja:"二つの街のあいだ、君も橋になる。"},
+    {zh:"夜深了，有一盏灯亮着，就够了。", ja:"夜更けでも、灯りが一つあれば十分。"},
+    {zh:"古池塘，青蛙跃入，水之音。", ja:"古池や 蛙飛びこむ 水の音"},
+    {zh:"再远的远方，今晚也是同一个月亮。", ja:"どんなに遠くても、今夜の月は同じ。"},
+    {zh:"走得慢的人，看见的花更多。", ja:"ゆっくり歩く人ほど、たくさんの花を見る。"},
+    {zh:"闲坐听雨，也是一件正经事。", ja:"雨の音を聞くのも、立派な用事。"},
+    {zh:"幽寂啊，蝉声渗入了山岩。", ja:"閑かさや 岩にしみ入る 蝉の声"},
+    {zh:"愿你今天，被温柔地对待。", ja:"今日も、やさしくされますように。"},
+    {zh:"季节会替我们，记住每一年。", ja:"季節が、毎年を覚えていてくれる。"},
+    {zh:"无论在哪里，好好吃饭，好好睡觉。", ja:"どこにいても、よく食べ、よく眠る。"},
+    {zh:"风停了，心也跟着静下来。", ja:"風がやんで、心も静かになる。"}
+  ];
+  function dayIndex(t){ var ref=new Date(2026,0,1); var now=new Date(t.year||2026,(t.mon||1)-1,t.date||1);
+    return Math.floor((now-ref)/86400000); }
+
+  // ---- 问候 ----
+  function greet(h){
+    if(h>=5&&h<11) return ["晨安","おはよう"];
+    if(h>=11&&h<17) return ["午安","こんにちは"];
+    if(h>=17&&h<22) return ["晚上好","こんばんは"];
+    return ["夜安","おやすみ"];
+  }
+
+  // ---- 画布：星 + 季节粒子 ----
+  var cv=document.getElementById("c"), cx=cv.getContext("2d"), W,H,DPR;
+  function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+"px"; cv.style.height=innerHeight+"px"; initStars(); }
+  var stars=[];
+  function initStars(){ stars=[]; var n=Math.round((W*H)/(14000*DPR)); for(var i=0;i<n;i++) stars.push({x:Math.random()*W,y:Math.random()*H*0.7,r:(Math.random()*1.1+.3)*DPR,p:Math.random()*6.28,s:Math.random()*0.8+0.3}); }
+
+  var season, particles=[], TAU=6.283185;
+  function makeParticles(){
+    particles=[];
+    var base = reduce?22:54;
+    for(var i=0;i<base;i++) particles.push(spawn(true));
+  }
+  function spawn(rand){
+    var x=Math.random()*W, y=rand?Math.random()*H:-20*DPR;
+    var sp={x:x,y:y,a:Math.random()*TAU,t:Math.random()};
+    if(season==="spring"){ sp.size=(Math.random()*5+5)*DPR; sp.vy=(Math.random()*.5+.35)*DPR; sp.vx=(Math.random()*.5-.1)*DPR; sp.sway=Math.random()*1.2+.4; }
+    else if(season==="summer"){ sp.size=(Math.random()*2.4+1.4)*DPR; sp.vy=(Math.random()*.25-.12)*DPR; sp.vx=(Math.random()*.25-.12)*DPR; sp.pulse=Math.random()*TAU; }
+    else if(season==="autumn"){ sp.size=(Math.random()*6+6)*DPR; sp.vy=(Math.random()*.6+.45)*DPR; sp.vx=(Math.random()*.7-.2)*DPR; sp.spin=(Math.random()*.04-.02); sp.hue=Math.random(); }
+    else { sp.size=(Math.random()*3+1.6)*DPR; sp.vy=(Math.random()*.5+.3)*DPR; sp.vx=(Math.random()*.3-.15)*DPR; sp.sway=Math.random()*1.0+.3; }
+    return sp;
+  }
+  function draw(now){
+    cx.clearRect(0,0,W,H);
+    // 星
+    if(curStar>0.02){
+      for(var i=0;i<stars.length;i++){var s=stars[i];var tw=0.6+0.4*Math.sin(now*0.001*s.s+s.p);
+        cx.globalAlpha=curStar*tw; cx.fillStyle="#fff"; cx.beginPath(); cx.arc(s.x,s.y,s.r,0,TAU); cx.fill();}
+    }
+    cx.globalAlpha=1;
+    // 粒子
+    for(var j=0;j<particles.length;j++){ var p=particles[j];
+      p.y+=p.vy; p.a+=0.01;
+      if(season==="spring"){ p.x+=p.vx+Math.sin(p.a)*p.sway*DPR*0.4; drawPetal(p); }
+      else if(season==="summer"){ p.x+=p.vx+Math.sin(p.a*0.7)*DPR*0.3; p.y+=Math.sin(p.a*1.1)*DPR*0.2; drawFly(p,now); }
+      else if(season==="autumn"){ p.x+=p.vx+Math.sin(p.a)*DPR*0.6; p.a+=p.spin; drawLeaf(p); }
+      else { p.x+=p.vx+Math.sin(p.a)*p.sway*DPR*0.3; drawSnow(p); }
+      if(p.y>H+30*DPR || p.x<-40*DPR || p.x>W+40*DPR){ particles[j]=spawn(false); }
+    }
+    raf=requestAnimationFrame(draw);
+  }
+  function drawPetal(p){ cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.globalAlpha=.82;
+    cx.fillStyle="rgba(255,210,224,.9)"; cx.beginPath();
+    cx.ellipse(0,0,p.size*0.5,p.size,0,0,TAU); cx.fill();
+    cx.fillStyle="rgba(255,182,205,.7)"; cx.beginPath(); cx.ellipse(0,p.size*0.15,p.size*0.28,p.size*0.55,0,0,TAU);cx.fill(); cx.restore(); }
+  function drawFly(p,now){ var g=0.45+0.55*Math.abs(Math.sin(now*0.002+p.pulse)); cx.save();cx.globalAlpha=g;
+    var grd=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*4); grd.addColorStop(0,"rgba(214,255,180,.95)"); grd.addColorStop(.4,"rgba(190,236,140,.5)"); grd.addColorStop(1,"rgba(190,236,140,0)");
+    cx.fillStyle=grd; cx.beginPath();cx.arc(p.x,p.y,p.size*4,0,TAU);cx.fill();
+    cx.globalAlpha=g;cx.fillStyle="#f4ffd6";cx.beginPath();cx.arc(p.x,p.y,p.size*0.7,0,TAU);cx.fill(); cx.restore(); }
+  function drawLeaf(p){ var cols=[[201,87,62],[214,140,51],[176,77,55],[191,108,40]]; var c=cols[Math.floor(p.hue*cols.length)%cols.length];
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.globalAlpha=.85;cx.fillStyle="rgba("+c[0]+","+c[1]+","+c[2]+",.9)";
+    cx.beginPath();cx.ellipse(0,0,p.size*0.45,p.size,0,0,TAU);cx.fill();
+    cx.strokeStyle="rgba(90,40,20,.35)";cx.lineWidth=Math.max(1,p.size*0.06);cx.beginPath();cx.moveTo(0,-p.size);cx.lineTo(0,p.size);cx.stroke();cx.restore(); }
+  function drawSnow(p){ cx.save();cx.globalAlpha=.85;cx.fillStyle="rgba(255,255,255,.92)";cx.beginPath();cx.arc(p.x,p.y,p.size,0,TAU);cx.fill();cx.restore(); }
+
+  // ---- 渲染主信息 + 天色 ----
+  var curStar=0;
+  function setSky(){
+    var t=tokyoNow(); var pal=palette(t.h); curStar=pal.star;
+    document.getElementById("sky").style.background="linear-gradient(180deg,"+rgb(pal.top)+" 0%,"+rgb(pal.bot)+" 100%)";
+    // 文字在亮天色时转深色
+    var bright=(pal.bot[0]+pal.bot[1]+pal.bot[2])/3;
+    var dark = bright>175 && t.h>6.5 && t.h<17.5;
+    document.documentElement.style.setProperty("--fg", dark?"#26313f":"#ffffff");
+    document.documentElement.style.setProperty("--fg-soft", dark?"rgba(38,49,63,.8)":"rgba(255,255,255,.78)");
+    document.documentElement.style.setProperty("--fg-faint", dark?"rgba(38,49,63,.5)":"rgba(255,255,255,.5)");
+  }
+  var lastSeason="";
+  function tick(){
+    var t=tokyoNow();
+    var g=greet(t.h);
+    document.getElementById("greet").innerHTML=g[0]+'<span class="dot">·</span>'+g[1];
+    document.getElementById("hm").textContent=("0"+t.hh).slice(-2)+":"+("0"+t.mm).slice(-2);
+    document.getElementById("sec").textContent=("0"+t.ss).slice(-2);
+    var dows=["日","一","二","三","四","五","六"];
+    var s=seasonOf(t.mon);
+    document.getElementById("meta").innerHTML=(t.mon)+"月"+t.date+"日<span class='sep'>·</span>周"+dows[t.dow]+"<span class='sep'>·</span>"+SEASON_CN[s]+"日的东京";
+    var pm=POEMS[((dayIndex(t)%POEMS.length)+POEMS.length)%POEMS.length];
+    document.getElementById("pzh").textContent=pm.zh;
+    document.getElementById("pja").textContent=pm.ja;
+    setSky();
+    if(s!==lastSeason){ lastSeason=s; season=s; makeParticles(); }
+  }
+
+  var raf;
+  function start(){ resize(); tick(); setInterval(tick,1000); if(!reduce){ raf=requestAnimationFrame(draw);} else { draw(performance.now()); } }
+  addEventListener("resize",function(){clearTimeout(window.__rz);window.__rz=setTimeout(resize,200);});
+  document.fonts&&document.fonts.ready.then(function(){});
+  start();
+})();
 </script>
 </body>
 </html>
